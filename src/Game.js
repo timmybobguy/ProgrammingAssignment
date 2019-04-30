@@ -9,10 +9,7 @@ var gameApp = new Vue({
     generateRandomNumber: function(lowerLimit, upperLimit) {
       return Math.floor(Math.random() * (+upperLimit - +lowerLimit)) + +lowerLimit;
     },
-    changeNumber: function() {
-      console.log(this.generateRandomNumber(0,2));
-      //generateRandomNumber(1,10)
-    },
+    
 
   }
 })
