@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <!-- development version, includes helpful console warnings -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="src/htmlFunctions.js"></script>
 
 
 </head>
@@ -26,32 +27,32 @@
   <div class="card-deck mx-auto">
 
     <div id="game-One">
-    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-      <div class="card-header">Game #1</div>
-      <div class="card-body">
-        <p class="card-text">The game will generate a random number between 0 and 99, you have to guess the number. The game will tell you if your guess is higher or lower than the answer.</p>
-        <input type="button" class="btn btn-primary" value="Game #1" @click="startGameOne">
+      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Game #1</div>
+        <div class="card-body">
+          <p class="card-text">The game will generate a random number between 0 and 99, you have to guess the number. The game will tell you if your guess is higher or lower than the answer.</p>
+          <input type="button" class="btn btn-primary" value="Play" v-on:click="startGameOne">
+        </div>
       </div>
     </div>
-    </div>
 
 
     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-      <div class="card-header">Game #1</div>
+      <div class="card-header">Game #2</div>
       <div class="card-body">
         <p class="card-text">The game will generate a random number between 0 and 99, you have to guess the number. The game will tell you if your guess is higher or lower than the answer.</p>
         <a href="#" class="btn btn-primary">Play now</a>
       </div>
     </div>
     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-      <div class="card-header">Game #1</div>
+      <div class="card-header">Game #3</div>
       <div class="card-body">
         <p class="card-text">The game will generate a random number between 0 and 99, you have to guess the number. The game will tell you if your guess is higher or lower than the answer.</p>
         <a href="#" class="btn btn-primary">Play now</a>
       </div>
     </div>
     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-      <div class="card-header">Game #1</div>
+      <div class="card-header">Game #4</div>
       <div class="card-body">
         <p class="card-text">The game will generate a random number between 0 and 99, you have to guess the number. The game will tell you if your guess is higher or lower than the answer.</p>
         <a href="#" class="btn btn-primary">Play now</a>
