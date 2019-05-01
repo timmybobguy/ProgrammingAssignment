@@ -52,7 +52,7 @@ var gameTwo = new Vue({
         this.alertWarm = true;
       } else if (guess > (this.randomNumber - 39) && guess < (this.randomNumber + 39)) {
         this.alertCool = true;
-      } else if (guess > (this.randomNumber - 40) && guess < (this.randomNumber + 40)) {
+      } else {
         this.alertCold = true;
       };
       this.numberOfGuesses += 1;
