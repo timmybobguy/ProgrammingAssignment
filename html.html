@@ -25,16 +25,37 @@
   </div>
 
   <div class="card-deck mx-auto">
-
+    <!--- The first game -->
     <div id="game-One">
-      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+
+      <div class="card text-white bg-secondary mb-3" v-if="instructionShown" style="max-width: 18rem;">
         <div class="card-header">Game #1</div>
         <div class="card-body">
           <p class="card-text">The game will generate a random number between 0 and 99, you have to guess the number. The game will tell you if your guess is higher or lower than the answer.</p>
           <input type="button" class="btn btn-primary" value="Play" v-on:click="startGameOne">
         </div>
       </div>
+
+      <!--- Actual game -->
+      <div v-if="gameShown">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem; min-width: 18rem;">
+          <div class="card-body">
+
+            <div class="alert alert-primary" v-if="alertStart" role="alert">Start out with any guess between 0-99</div>
+            <div class="alert alert-secondary" v-if="alertRight" role="alert">You got the right answer in x guesses</div>
+            <div class="alert alert-danger" v-if="alertLower" role="alert">Try lower</div>
+            <div class="alert alert-warning" v-if="alertHigher" role="alert">Try higher</div>
+
+            <input type="number" class="form-control" id="gameOneInput" min="0" max="99">
+            <input type="button" class="btn btn-primary" value="Guess" v-on:click="guessNumber">
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
+
 
 
     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">

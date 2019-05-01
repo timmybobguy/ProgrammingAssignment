@@ -9,7 +9,11 @@ var gameApp = new Vue({
     generateRandomNumber: function(lowerLimit, upperLimit) {
       return Math.floor(Math.random() * (+upperLimit - +lowerLimit)) + +lowerLimit;
     },
-    
+    getUserInput: function(elementId) {
+      return document.getElementById(elementId).value
+    },
+
+
 
   }
 })
