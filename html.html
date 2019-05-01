@@ -18,7 +18,7 @@
 
 
   <div id="main-gameApp">
-    
+
   <!--- Main page styling with bootstrap -->
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
@@ -106,14 +106,20 @@
 
 
 
+    <div id="game-Three">
 
-    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-      <div class="card-header">Game #3</div>
-      <div class="card-body">
-        <p class="card-text">The game will generate a random number between 0 and 99, you have to guess the number. The game will tell you if your guess is higher or lower than the answer.</p>
-        <a href="#" class="btn btn-primary">Play now</a>
+      <div class="card text-white bg-secondary mb-3" v-if="instructionShown" style="max-width: 18rem;">
+        <div class="card-header">Game #3</div>
+        <div class="card-body">
+          <p class="card-text">In this game the user mentally selects a number. Then the computer tries to guess it and you tell the computer if the guesses are lower or higher.</p>
+          <a href="#" class="btn btn-primary">Play now</a>
+        </div>
       </div>
+
+
+
     </div>
+
     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
       <div class="card-header">Game #4</div>
       <div class="card-body">
@@ -121,9 +127,12 @@
         <a href="#" class="btn btn-primary">Play now</a>
       </div>
     </div>
+
+
+
+
+
   </div>
-
-
 
 
 
