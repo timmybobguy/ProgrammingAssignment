@@ -47,8 +47,11 @@
             <div class="alert alert-warning" v-if="alertHigher" role="alert">Try higher</div>
             <div class="alert alert-info" v-if="alertError" role="alert">Error, please enter a number between 0-99</div>
 
+            <p v-if="lastGuessShown"> Your last guess: {{ lastGuess }} </p>
+
             <input type="number" class="form-control" id="gameOneInput" min="0" max="99">
-            <input type="button" class="btn btn-primary" value="Guess" v-on:click="guessNumber">
+            <input type="button" v-if="finishGame" class="btn btn-primary" value="Guess" v-on:click="guessNumber">
+            <input type="button" v-if="!finishGame" class="btn btn-primary" value="Back" v-on:click="quitGame">
           </div>
         </div>
       </div>
@@ -59,13 +62,45 @@
 
 
 
-    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-      <div class="card-header">Game #2</div>
-      <div class="card-body">
-        <p class="card-text">The game will generate a random number between 0 and 99, you have to guess the number. The game will tell you if your guess is higher or lower than the answer.</p>
-        <a href="#" class="btn btn-primary">Play now</a>
+    <div id="game-Two">
+
+      <div class="card text-white bg-secondary mb-3" v-if="instructionShown" style="max-width: 18rem;">
+        <div class="card-header">Game #2</div>
+        <div class="card-body">
+          <p class="card-text">The game will generate a random number between 0 and 99, you have to guess the number. The game will tell you if your guess is hot or cold.</p>
+          <input type="button" class="btn btn-primary" value="Play" v-on:click="startgameTwo">
+        </div>
       </div>
+
+      <!--- Actual game -->
+      <div v-if="gameShown">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem; min-width: 18rem;">
+          <div class="card-body">
+
+            <div class="alert alert-primary" v-if="alertStart" role="alert">Start out with any guess between 0-99</div>
+            <div class="alert alert-secondary" v-if="alertRight" role="alert">You got the right answer in {{ numberOfGuesses }} guess/es</div>
+            <div class="alert alert-danger" v-if="alertCold" role="alert">Cold</div>
+            <div class="alert alert-warning" v-if="alertCool" role="alert">Cool</div>
+            <div class="alert alert-danger" v-if="alertHot" role="alert">Hot</div>
+            <div class="alert alert-warning" v-if="alertWarm" role="alert">Warm</div>
+            <div class="alert alert-info" v-if="alertError" role="alert">Error, please enter a number between 0-99</div>
+
+            <p v-if="lastGuessShown"> Your last guess: {{ lastGuess }} </p>
+
+            <input type="number" class="form-control" id="gameTwoInput" min="0" max="99">
+            <input type="button" v-if="finishGame" class="btn btn-primary" value="Guess" v-on:click="guessNumber">
+            <input type="button" v-if="!finishGame" class="btn btn-primary" value="Back" v-on:click="quitGame">
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
+
+
+
+
     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
       <div class="card-header">Game #3</div>
       <div class="card-body">
@@ -89,6 +124,7 @@
 
 
   <script src="src/GameOne.js"></script>
+  <script src="src/GameTwo.js"></script>
   <script src="src/Game.js"></script>
 
 
