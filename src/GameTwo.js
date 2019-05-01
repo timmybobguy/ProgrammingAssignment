@@ -66,6 +66,7 @@ var gameTwo = new Vue({
       this.alertStart = true;
       this.finishGame = true;
       this.instructionShown = true;
+      gameApp.playerScore += this.numberOfGuesses;
     }
   }
 

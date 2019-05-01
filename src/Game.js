@@ -1,7 +1,7 @@
 var gameApp = new Vue({
   el: '#main-gameApp',
   data: {
-    one: '',
+    playerScore: 0,
     two: '',
     three: ''
   },
