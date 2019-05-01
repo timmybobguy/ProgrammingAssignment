@@ -9,6 +9,7 @@ var gameOne = new Vue({
     alertHigher: false,
     alertLower: false,
     alertRight: false,
+    alertError: false,
   },
   methods: {
     startGameOne: function() {
@@ -25,19 +26,23 @@ var gameOne = new Vue({
       this.alertHigher = false;
       this.alertLower = false;
       this.alertRight = false;
+      this.alertError = false;
     },
     guessNumber: function() {
-      this.dismissAlerts()
+      this.dismissAlerts();
       var guess = Number(gameApp.getUserInput('gameOneInput'));
       if (this.randomNumber == guess) {
         this.alertRight = true;
         document.getElementById('gameOneInput').readOnly = true;
-      } else if (guess > this.randomNumber) {
-        this.alertLower = true;
+      } else if (guess > 99) {
+        this.alertError = true;
       } else if (guess < this.randomNumber) {
         this.alertHigher = true;
+      } else if (guess > this.randomNumber) {
+        this.alertLower = true;
       }
-
+      this.numberOfGuesses += 1;
+      document.getElementById('gameOneInput').value = "";
     }
   }
 
