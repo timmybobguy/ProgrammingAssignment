@@ -38,13 +38,13 @@ var gameFour = new Vue({
 	},
 	guessTemp: function(temp) {
 	  this.dismissAlerts();
-	  if (this.maximumNumber = 5) {
+	  if ( this.alertRight == true) {
 		  this.alertError = true; //Cheating
 	  } else {
 
       if ((this.maximumNumber - this.minimumNumber) <= 38) {
 
-        this.initialGuess = this.hotGuess + 1;
+        this.initialGuess = this.hotGuess += 1;
 
       } else {
 
@@ -63,7 +63,7 @@ var gameFour = new Vue({
         if (guess == 0) {
           this.initialGuess = Math.round(this.initialGuess + ((this.initialGuess - this.minimumNumber) / 2));
         } else {
-          this.initialGuess = Math.round(this.initialGuess + ((this.initialGuess - this.minimumNumber) / 2));
+          this.initialGuess = Math.round(this.initialGuess - ((this.initialGuess - this.minimumNumber) / 2));
         }
 
 
