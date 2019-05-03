@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <!-- development version, includes helpful console warnings -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="src/htmlFunctions.js"></script>
 
 
 </head>
@@ -115,7 +114,7 @@
           <input type="button" class="btn btn-primary" value="Play" v-on:click="startGameThree">
         </div>
       </div>
-	  
+
 	  <div v-if="gameShown">
 		<div class="card text-white bg-secondary mb-3" style="max-width: 18rem; min-width: 18rem;">
           <div class="card-body">
@@ -131,21 +130,47 @@
             <input type="button" v-if="finishGame" class="btn btn-primary" value="Higher" v-on:click="guessHigher">
 			<input type="button" v-if="finishGame" class="btn btn-primary" value="Right" v-on:click="guessRight">
 			<input type="button" v-if="finishGame" class="btn btn-primary" value="Lower" v-on:click="guessLower">
-			
+
             <input type="button" v-if="!finishGame" class="btn btn-primary" value="Back" v-on:click="quitGame">
           </div>
         </div>
-	  
+
 	  </div>
-	  
+
     </div>
 
-    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-      <div class="card-header">Game #4</div>
-      <div class="card-body">
-        <p class="card-text">Test</p>
-        <a href="#" class="btn btn-primary">Play now</a>
+    <div id="game-Four">
+
+      <div class="card text-white bg-secondary mb-3" v-if="instructionShown" style="max-width: 18rem;">
+        <div class="card-header">Game #4</div>
+        <div class="card-body">
+          <p class="card-text">In this game the user mentally selects a number. Then the computer tries to guess it and you tell the computer if the guesses are cold, cool, warm, hot or right.</p>
+          <input type="button" class="btn btn-primary" value="Play" v-on:click="startGameFour">
+        </div>
       </div>
+
+    <div v-if="gameShown">
+    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem; min-width: 18rem;">
+          <div class="card-body">
+
+            <div class="alert alert-primary" v-if="alertStart" role="alert">My initial guess is: {{ initialGuess }}</div>
+            <div class="alert alert-secondary" v-if="alertRight" role="alert">Your number was guessed in {{ numberOfGuesses }} guess/es</div>
+            <div class="alert alert-danger" v-if="alertGuess" role="alert">My guess is now: {{ initialGuess }}</div>
+      <div class="alert alert-info" v-if="alertError" role="alert"> You cheated !!!</div>
+
+
+            <p> Current number of guesses: {{ numberOfGuesses }} </p>
+
+            <input type="button" v-if="finishGame" class="btn btn-primary" value="Higher" v-on:click="guessHigher">
+      <input type="button" v-if="finishGame" class="btn btn-primary" value="Right" v-on:click="guessRight">
+      <input type="button" v-if="finishGame" class="btn btn-primary" value="Lower" v-on:click="guessLower">
+
+            <input type="button" v-if="!finishGame" class="btn btn-primary" value="Back" v-on:click="quitGame">
+          </div>
+        </div>
+
+    </div>
+
     </div>
 
 
@@ -155,10 +180,11 @@
   </div>
 
 
-	
+
   <script src="src/GameOne.js"></script>
   <script src="src/GameTwo.js"></script>
   <script src="src/GameThree.js"></script>
+  <script src="src/GameFour.js"></script>
   <script src="src/Game.js"></script>
 
 
