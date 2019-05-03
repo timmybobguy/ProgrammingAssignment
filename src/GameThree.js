@@ -1,7 +1,7 @@
 var gameThree = new Vue({
   el: '#game-Three',
   data: {
-	initalGuess: 0,
+	initialGuess: 0,
 	maximumNumber: 99,
 	minimumNumber: 0,
     numberOfGuesses: 0,
@@ -20,6 +20,7 @@ var gameThree = new Vue({
       this.instructionShown = false;
       this.gameShown = true;
 	  this.maximumNumber = 99;
+    this.minimumNumber = 0;
 
     },
 	dismissAlerts: function() {
@@ -39,10 +40,11 @@ var gameThree = new Vue({
 	  if (this.initialGuess > this.maximumNumber && this.maximumNumber != 0) {
 		this.alertError = true;
 	  } else {
-		
+
 		this.maximumNumber = this.initialGuess;
-		this.initialGuess = Math.round(this.initialGuess/2);
-		
+		this.initialGuess = Math.round(this.initialGuess - ((this.maximumNumber - this.minimumNumber) / 2));
+
+
 		this.alertGuess = true;
 	  }
 	  this.numberOfGuesses += 1;

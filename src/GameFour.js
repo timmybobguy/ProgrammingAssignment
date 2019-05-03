@@ -44,7 +44,7 @@ var gameFour = new Vue({
 
       if ((this.maximumNumber - this.minimumNumber) <= 38) {
 
-        this.initalGuess = this.hotGuess + 1;
+        this.initialGuess = this.hotGuess + 1;
 
       } else {
 
@@ -58,7 +58,13 @@ var gameFour = new Vue({
         if (this.maximumNumber > 99) {
           this.maximumNumber = 99;
         }
-        
+
+        var guess = gameApp.generateRandomNumber(0,2)
+        if (guess == 0) {
+          this.initialGuess = Math.round(this.initialGuess + ((this.initialGuess - this.minimumNumber) / 2));
+        } else {
+          this.initialGuess = Math.round(this.initialGuess + ((this.initialGuess - this.minimumNumber) / 2));
+        }
 
 
       }
