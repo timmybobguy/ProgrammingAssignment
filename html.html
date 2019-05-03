@@ -161,9 +161,11 @@
 
             <p> Current number of guesses: {{ numberOfGuesses }} </p>
 
-            <input type="button" v-if="finishGame" class="btn btn-primary" value="Higher" v-on:click="guessHigher">
+            <input type="button" v-if="finishGame" class="btn btn-primary" value="Hot (1-9)" v-on:click="guessTemp(9)">
+            <input type="button" v-if="finishGame" class="btn btn-primary" value="Warm" v-on:click="guessTemp(19)">
       <input type="button" v-if="finishGame" class="btn btn-primary" value="Right" v-on:click="guessRight">
-      <input type="button" v-if="finishGame" class="btn btn-primary" value="Lower" v-on:click="guessLower">
+      <input type="button" v-if="finishGame" class="btn btn-primary" value="Cool" v-on:click="guessTemp(39)">
+      <input type="button" v-if="finishGame" class="btn btn-primary" value="Cold" v-on:click="guessTemp(40)">
 
             <input type="button" v-if="!finishGame" class="btn btn-primary" value="Back" v-on:click="quitGame">
           </div>

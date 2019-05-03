@@ -1,10 +1,11 @@
 var gameFour = new Vue({
   el: '#game-Four',
   data: {
-	  initalGuess: 0,
+	  initialGuess: 0,
 	  maximumNumber: 99,
     minimumNumber: 0,
     numberOfGuesses: 0,
+    hotGuess: 0,
     gameShown: false,
     instructionShown: true,
     alertStart: true,
@@ -35,29 +36,35 @@ var gameFour = new Vue({
 	  this.alertRight = true;
 	  this.finishGame = false;
 	},
-	guessLower: function() {
+	guessTemp: function(temp) {
 	  this.dismissAlerts();
-	  if (this.initialGuess >= this.maximumNumber && this.maximumNumber != 0) {
-		this.alertError = true;
+	  if (this.maximumNumber = 5) {
+		  this.alertError = true; //Cheating
 	  } else {
 
-		this.maximumNumber = this.initialGuess;
-		this.initialGuess = Math.round(this.initialGuess - ((this.maximumNumber - this.minimumNumber) / 2));
+      if ((this.maximumNumber - this.minimumNumber) <= 38) {
 
-		this.alertGuess = true;
-	  }
-	  this.numberOfGuesses += 1;
-	},
-	guessHigher: function() {
-	  this.dismissAlerts();
-	  if (this.initialGuess >= this.maximumNumber && this.minimumNumber != 0) {
-		this.alertError = true;
-	  } else {
+        this.initalGuess = this.hotGuess + 1;
 
-	  	this.minimumNumber = this.initialGuess;
-		this.initialGuess = Math.round(this.initialGuess + ((this.maximumNumber - this.minimumNumber) / 2));
+      } else {
 
-		this.alertGuess = true;
+
+        this.minimumNumber = ((this.initialGuess - temp - 1) - temp)
+        if (this.minimumNumber < 0) {
+          this.minimumNumber = 0;
+        }
+        this.hotGuess = this.minimumNumber;
+        this.maximumNumber = ((this.initialGuess + temp + 1) + temp)
+        if (this.maximumNumber > 99) {
+          this.maximumNumber = 99;
+        }
+        
+
+
+      }
+
+
+		  this.alertGuess = true;
 	  }
 	  this.numberOfGuesses += 1;
 	},
