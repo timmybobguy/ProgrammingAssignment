@@ -38,7 +38,7 @@ var gameFour = new Vue({
 	},
 	guessTemp: function(temp) {
 	  this.dismissAlerts();
-	  if ( this.alertRight == true) {
+	  if (this.initialGuess > this.maximumNumber || this.initialGuess < this.minimumNumber) {
 		  this.alertError = true; //Cheating
 	  } else {
 
