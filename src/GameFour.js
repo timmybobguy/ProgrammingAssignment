@@ -60,7 +60,7 @@ var gameFour = new Vue({
         }
 
         var guess = gameApp.generateRandomNumber(0,2)
-        if (guess == 0) {
+        if (guess === 0) {
           this.initialGuess = Math.round(this.initialGuess + ((this.maximumNumber - this.initialGuess) / 2));
         } else {
           this.initialGuess = Math.round(this.initialGuess - ((this.initialGuess - this.minimumNumber) / 2));
