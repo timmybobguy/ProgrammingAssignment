@@ -86,7 +86,7 @@
             <div class="alert alert-secondary" v-if="alertRight" role="alert">You got the right answer in {{ numberOfGuesses }} guess/es</div>
             <div class="alert alert-danger" v-if="alertCold" role="alert">Cold</div>
             <div class="alert alert-warning" v-if="alertCool" role="alert">Cool</div>
-            <div class="alert alert-danger" v-if="alertHot" role="alert">Hot</div>
+            <div class="alert alert-danger" v-if="alertHot" role="alert">Hot (Only up to 9 away from the answer)</div>
             <div class="alert alert-warning" v-if="alertWarm" role="alert">Warm</div>
             <div class="alert alert-info" v-if="alertError" role="alert">Error, please enter a number between 0-99</div>
 
