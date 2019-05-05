@@ -44,7 +44,7 @@ var gameTwo = new Vue({
         this.alertRight = true;
         document.getElementById('gameTwoInput').readOnly = true;
         this.finishGame = false;
-      } else if (guess > 99) {
+      } else if (guess > 99 || guess < 0) {
         this.alertError = true;
       } else if (guess > (this.randomNumber - 9) && guess < (this.randomNumber + 9)) {
         this.alertHot = true;

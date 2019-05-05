@@ -40,7 +40,7 @@ var gameOne = new Vue({
         this.alertRight = true;
         document.getElementById('gameOneInput').readOnly = true;
         this.finishGame = false;
-      } else if (guess > 99) {
+      } else if (guess > 99 || guess < 0) {
         this.alertError = true;
       } else if (guess < this.randomNumber) {
         this.alertHigher = true;
