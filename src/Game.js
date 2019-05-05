@@ -2,8 +2,6 @@ var gameApp = new Vue({
   el: '#main-gameApp',
   data: {
     playerScore: 0,
-    two: '',
-    three: ''
   },
   methods: {
     generateRandomNumber: function(lowerLimit, upperLimit) {
